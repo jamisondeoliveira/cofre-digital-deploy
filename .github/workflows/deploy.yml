@@ -1,0 +1,30 @@
+name: Cofre Digital - Deploy
+
+on:
+  push:
+    branches: [ main ]
+
+env:
+  IMAGE_NAME: cofre-digital-app
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+
+      - name: Login Docker
+        run: echo "Simulando login"
+
+      - name: Build imagem
+        run: echo "Construindo imagem Docker..."
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Deploy simulado
+        run: echo "Deploy realizado com sucesso!"
